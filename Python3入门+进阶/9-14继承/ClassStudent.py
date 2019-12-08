@@ -10,7 +10,7 @@ class Student(Human):  # 定义一个学生Student类，继承Human的属性
         
     def do_homework(self):  # 定义一个和父类方法同名的方法,有限调用子类的方法
         super(Student, self).do_homework()  # 使用super关键字调用父类方法
-        print('english homework')
+        print('english homework！')
 
 student1 = Student('人民路小学','石敢当',18)  # 实例化的时候不需要传入self
 student1.do_homework()  # 当子类和父类方法同名，有限显示子类方法
