@@ -6,3 +6,6 @@ class Human():  # 定义一个人父类
 
     def get_name(self):  # 定义一个方法获取学生名字
         print(self.name)
+
+    def do_homework(self):  # 定义一个父类的方法
+        print('This is a parent method')
