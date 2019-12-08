@@ -1,14 +1,14 @@
 #  课堂练习
 class Person(object):  # 人类
-    def __init__(self, name, gender):
+    def __init__(self, name, gender):  # 构造函数
         self.name = name
         self.gender = gender
-class Student(Person):  # 学生类
-    def __init__(self, name, gender, score):
+class Student(Person):  # 学生类是继承了父类Person的属性，这样是内部继承，如何从外部继承呢？
+    def __init__(self, name, gender, score):  # 构造函数
         super(Student, self).__init__(name, gender)
         self.score = score
 class Teacher(Person): # 老师类
-    def __init__(self, name, gender, course):
+    def __init__(self, name, gender, course): # 构造函数
         super(Teacher, self).__init__(name, gender)
         self.course = course
 
