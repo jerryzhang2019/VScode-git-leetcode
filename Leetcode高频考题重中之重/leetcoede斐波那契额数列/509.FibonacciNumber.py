@@ -15,7 +15,7 @@ if __name__ == '__main__':
     result = Solution().fib(N)  # 只打印某一个数
     print(result)
 
-# 问题2：打印斐波那契数的前N个数？比如打印前10个数
+# 问题2：打印斐波那契数的前N个数？比如打印前10个数等等
 
 class Fib(object):
     def __init__(self, num):
