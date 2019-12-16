@@ -1,9 +1,7 @@
-__author__ = 'jerry zhang'
 
 from flask import Flask,make_response # 如何使用内置函数Flask
-from helper import  is_isbn_or_key  # 从helper中导入处理关键字和isbn的函数
 # from config import DEBUG  # 如何使用自己写的配置文件？
-
+__author__ = 'jerry zhang'
 
 # app = Flask()
 app = Flask(__name__)
@@ -20,8 +18,14 @@ def search(q, page):  # 关键字搜索和ISBN搜索
 # 如何调用API?
     # isbn isbn13 13个0到9的数字组成
     # isbn10 10个0到9数字组成，含有一些’-‘
-
-    isbn_or_key = is_isbn_or_key(q)  # 子函数调用 函数被封装在helper中
+    isbn_or_key = 'key'
+    if len(q) == 13 and q.isdigit():
+        isbn_or_key = 'isbn'
+    # if '-' in q and len(q.replace('-', '')) == 10 and q.replace('-', '').isdigit:  # 代码太长更改一下
+    short_q = q.replace('-', '')
+    if '-' in q and len(short_q) == 10 and short_q.isdigit:
+        isbn_or_key = 'isbn'
+    pass
 
 '''
 @app.route('/hello/')  # 装饰器，传入URL路径
