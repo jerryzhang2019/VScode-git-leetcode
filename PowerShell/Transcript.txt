@@ -1,0 +1,39 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191221213922
+Username: REDMOND\v-qizha9
+RunAs User: REDMOND\v-qizha9
+Configuration Name: 
+Machine: MININT-7KNKBUU (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 15616
+PSVersion: 5.1.18362.145
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.145
+BuildVersion: 10.0.18362.145
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is Transcript.txt
+PS C:\VScode_jerryzhang\VScode-git-leetcode\powershell> Get-Command -Name *Process
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-AppvVirtualProcess                             1.0.0.0    AppvClient
+Function        Start-AppvVirtualProcess                           1.0.0.0    AppvClient
+Cmdlet          Debug-Process                                      3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Enter-PSHostProcess                                3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Exit-PSHostProcess                                 3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Get-Process                                        3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Start-Process                                      3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Stop-Process                                       3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Wait-Process                                       3.1.0.0    Microsoft.PowerShell.Management
+
+
+PS C:\VScode_jerryzhang\VScode-git-leetcode\powershell> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20191221214004
+**********************
