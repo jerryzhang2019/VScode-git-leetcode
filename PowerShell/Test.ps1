@@ -31,3 +31,54 @@ function two{$var1=20;one}
 one # The variable is 10
 two # The variable is 20
 one # The variable is 10
+# 循环类
+"The below is foreach loop:"
+$var=1,2,3,4,5,6
+foreach($i in $var)  # foreach循环
+{
+    $n++
+    Write-Host "$i"
+}
+Write-Host "there were $n record"
+# 直接获取管道数据
+$n=0
+"a","b","c","d"|foreach{
+    $n++
+    Write-Host $_
+}
+Write-Host "there were $n record"
+# while 循环
+"The below is while loop: "
+$n = 0
+while($n -le5) # 当$n小于等于5时，执行下面的操作
+{
+    Write-Host $n
+    $n++
+}
+# do while的用法
+"The below is do while loop:"
+$n = 0
+do
+{
+    Write-Host $n
+    $n++
+}
+while($n -ne 3) # 当n不等于3时进行循环操作
+# do...until的用法
+"The below is do until loop"
+$n = 0
+do
+{
+    Write-Host $n
+    $n++
+}
+until($n -gt3) #当$n大于3时停止操作
+# if的用法
+# Get-Service | foreach {
+#     if($_status -eq "running"){
+#         Write-Host $_.DisplayName "("$_status")" -ForegroundColor "green"
+#     }
+#     else {
+#         Write-Host $_.DisplayName "("$_status")" -ForegroundColor "red"
+#     }
+}
