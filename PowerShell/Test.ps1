@@ -81,4 +81,109 @@ until($n -gt3) #当$n大于3时停止操作
 #     else {
 #         Write-Host $_.DisplayName "("$_status")" -ForegroundColor "red"
 #     }
+# }
+"The below is a switch"
+$a = 3
+switch($a)
+{
+    1
+    {"It's one"; break} # break的意思表示，如果匹配则跳出switch语句
+    2
+    {"It's two"; break}
+    3
+    {"It's three"; break}
+    4
+    {"It's four"; break}
+    5
+    {"It's five"; break}
+    default
+    {"It's unknown"; break}
 }
+"The below is a switch -casesensitive"
+$day = "day1"
+switch -CaseSensitive($day) # 表示大小写敏感，区分大小写
+{
+    day1
+    {"It's Monday"; break}
+    day2
+    {"It's Tuesday"; break}
+    day3
+    {"It's Wednesday"; break}
+    day4
+    {"It's Thursday"; break}
+    day5
+    {"It's Friday"; break}
+    day6
+    {"It's Saturday"; break}
+    day7
+    {"It's Sunday"; break}
+    default
+    {"It's unknown"; break}
+}
+"The below is switch -regex" # 正则表达式匹配
+$day = "day5"
+switch -Regex($day)
+{
+    ^[a-z]+$
+    {"alphabet,match is:" + $_; break}
+    ^[\d]+$
+    {"number,match is:" + $_; break }
+    ^\w+$
+    {"alphabet+number,match is:"+$_; break}
+    default
+    {"Nothing"+ $_; break}
+
+}
+"The below is switch -regex" # 正则表达式匹配,表达式可为数组
+$day = "day5", "day6"
+switch -Regex($day)
+{
+    ^[a-z]+$
+    {"alphabet,match is:" + $_; break}
+    ^[\d]+$
+    {"number,match is:" + $_; break }
+    ^\w+$
+    {"alphabet+number,match is:"+$_; break}
+    default
+    {"Nothing"+ $_; break}
+
+}
+
+"The below is switch -wildcard" # 通配符匹配
+$day = "day2"
+switch -wildcard($day)
+{
+    day2
+    {"day2,match is:" + $_; break}
+    day3
+    {"day3,match is:" + $_; break }
+    day*
+    {"wildcard,match is:"+$_; break}
+    default
+    {"Nothing"+ $_; break}
+}
+
+"The below is how to use break"
+$var = 0
+while($var -lt 10)
+{
+    $var += 1
+    if($var -eq 5)
+    {
+        break  # 当var=5时，终止while循环
+    }
+    write-host $var
+}
+
+"The below is how to use continue"
+$var = 0
+while($var -lt 10)
+{
+    $var += 1
+    if($var -eq 5)
+    {
+        continue  # 当var=5时,跳出本次循环，继续下一轮循环
+    }
+    write-host $var
+}
+
