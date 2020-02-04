@@ -12,6 +12,7 @@ app.config.from_object('config')  # 如何导入配置文件？括号内接收�
 
 # 项目的第一个视图函数
 @app.route('/book/search/<q>/<page>')
+
 def search(q, page):  # 关键字搜索和ISBN搜索
     """
     q start count isbn 四种关键字简化为q: 普通关键字 isbn 和 page
@@ -22,32 +23,13 @@ def search(q, page):  # 关键字搜索和ISBN搜索
     # isbn10 10个0到9数字组成，含有一些’-‘
 
     isbn_or_key = is_isbn_or_key(q)  # 子函数调用 函数被封装在helper中
+    if isbn_or_key == 'isbn':
+        YuShuBook.search_by_isbn(q)
+        pass
 
-'''
-@app.route('/hello/')  # 装饰器，传入URL路径
-def hello():  # 通过HTTp请求访问这个函数 叫做视图函数
-    # 基于类的视图（既插视图）
-    # status code 200,404,301
-    # content - type http headers
-    # content - type = text/html
-    # response
-    headers = {
-        # 'content-type': 'text/plain',
-        'content-type': 'application/json',
-        'location': 'http://www.bing.com'  # 重定向 如果寻找的地址不存在，则重新跳转到新的网址
-    }
-    # response = make_response('<html></html>', 404)  # 创建response对象
-    """
-    response = make_response('<html></html>', 301)  # 创建response对象
-    response.headers = headers
-    return response
-   """
-    # 使用下面一行替换上面3行代码
-    return '<html></html>', 301, headers
 
-    # return '<html></html>'
-    # return 'Hello, QiYue'
-'''
+
+
 if __name__ == '__main__': # 入口文件
     # 生产环境 nginx + uwsgi
     # 如何路由注册？字典 dict 子类
