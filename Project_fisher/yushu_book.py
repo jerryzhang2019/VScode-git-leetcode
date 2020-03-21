@@ -15,9 +15,13 @@ class YuShuBook:
         return result
         # url = self.isbn_url 另外一种调用url的方法
 
+    # def search_by_isbn(self,isbn): 
+    #     url = YuShuBook.isbn_url.format(isbn) 方法二
+    #     url = self.isbn_url 方法三
+
     @classmethod  # 类方法
     def search_by_keyword(cls,keyword,count=15, start=0 ):  # 方法二按照关键字查询
-        url = cls.keyword_url.format(keyword)
-        resutl = HTTP.get(url)
+        url = cls.keyword_url.format(keyword, count, start)
+        result = HTTP.get(url)
         return result
     
