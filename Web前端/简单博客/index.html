@@ -9,6 +9,42 @@
     />
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+      #nestedGrid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-gap: 1px;
+        border:3px solid white;
+      }
+
+      .photoBox{
+        width: 350px;
+        height: 150px;
+        border:1px solid red;
+        background: #F9FA4D;
+      }
+      /* put the image here */
+      #one{
+        background-image: url('img/driving.jpeg');
+        background-size: contain;
+        /* background-repeat: no-repeat; */
+      }
+      #two{
+        background-image: url('img/boat.jpeg');
+        background-size: contain;
+      }
+      #three{
+        background-image: url('img/jerryzhang_standing.jpeg');
+        background-size: contain;
+      }
+      #four{
+        background-image: url('img/memory.jpeg');
+        background-size: contain;
+      }
+      
+
+    </style>
   </head>
 
   <body>
@@ -19,7 +55,14 @@
       <!-- Add Link To Blog Here -->
       <a href="blog-post.html">Click here for blog post</a>
     </div>
-    <div class="content box">Content</div>
+    <div class="content box">Content
+     <div id="nestedGrid">
+       <div id="one" class="photoBox">  </div>
+       <div id="two" class="photoBox"> </div>
+       <div id="three" class="photoBox"> </div>
+       <div id="four" class="photoBox"> </div>
+      </div>
+    </div>
     <div class="footer box">Footer</div>
   </div>
   </body>
