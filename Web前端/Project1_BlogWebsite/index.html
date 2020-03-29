@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8" />
     <title>JerryZhang Blog Website</title>
-    <meta
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-      name="viewport"
-    />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
     <!-- Add stycle css here -->
     <link rel="stylesheet" href="css/main.css">
-    
+</head>
 
-  </head>
-
-  <body>
+<body>
   <div class = "container">
-    
-    <div class="header box">Header
+    <!-- 标题栏 -->
+    <div class="row header">
       <div>
-          <div class="float-left">
-            <img class="logo" src="images/logo.jpeg"> 
-          </div>
-          <div class="float-right">
-            <h1>Jerry(Qi) Zhang</h1>
-            <h2>Software Engineer</h2>
-          </div>
+        <div class="float-left">
+          <img class="logo" src="images/logo.jpeg"> 
+        </div>
+        <div class="float-right">
+          <h1>Jerry(Qi) Zhang</h1>
+          <h2>Software Engineer</h2>
+        </div>
+      </div>
+    </div>
+      <!-- 灰色分割线 -->
+    <div class="row">
+      <div>
+        <div class="hr-line"></div>
+      </div>
+    </div>
+          <!-- 放一个大的主题图 -->
+    <div class="row">
+      <div>
+        <img class="img-responsive" src="images/Seattle.jpg">
       </div>
     </div>
 
-    <div class="sidebar box">
-      <h1>Blog Posts</h1>
-      <!-- Add Link To Blog Here -->
-      <a href="blog-post.html">Click here for blog post</a>
-    </div>
-    <div class="content box">Content
-     <div id="nestedGrid">
-       <div id="one" class="photoBox">  </div>
-       <div id="two" class="photoBox"> </div>
-       <div id="three" class="photoBox"> </div>
-       <div id="four" class="photoBox"> </div>
-      </div>
-    </div>
-    <div class="footer box">Footer</div>
+    <!-- 使用无序列表结构 -->
+    <ul class="wrapper text-center">
+      <!-- 第一张卡片 -->
+      <li class="card">
+        <h1>Resume我的简历</h1>
+        <i>Author:JerryZhang</i>
+        <img class="img-responsive" src="images/MyResume.jfif">
+        <p>我的简介</p>
+        <a href="blog-post/MyResume.html">
+           <button type="button">Detail</button>
+        </a>
+
+      </li>
+        <!-- 第二张卡片 -->
+      <li class="card">
+        <h1>My trip我的旅行</h1>
+        <img class="img-responsive" src="images/MyTrip.gif">
+        <p>我的旅行简介</p>
+        <a href="blog-post/MyTrip.html">
+           <button type="button">Detail</button>
+        </a>
+      </li>
+      <!-- 第三张卡片 -->
+      <li class="card">
+        <h1>My work我的工作</h1>
+        <img class="img-responsive" src="images/MyWork.gif">
+        <p>我的工作简介</p>
+        <a href="blog-post/MyWork.html">
+           <button type="button">Detail</button>
+        </a>
+      </li>
+
+
+    </ul>
+  
+
 
   </div>
-  </body>
+</body>
 
 </html>

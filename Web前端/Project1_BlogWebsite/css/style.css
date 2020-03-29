@@ -1,29 +1,26 @@
+body{
+  font-size:14px;
+  margin-top:20px;
+}
 .container{
-    /* Step 1: Set display to grid */
-      display:grid;
-   /* Step 2: setup rows amd columns */
-      /* grid-template-columns: repeat(3, 1fr); */
-      height: 90vh;
-      grid-template-columns: 850px;
-      grid-template-rows: 250px 1fr 1fr;
-      /* Initially each element has its own row for small screens */
-      grid-template-areas: 
-      "hd"
-      "sd"
-      "main"
-      "ft";
-  }
-  .box{
-    /* width: 250px;
-    height: 150px;  */
-    border: 1px solid red;
-    background: #F8FA9D;
-    }
+      width: 90%;
+      margin:0 auto;
 
-  .header{
-    /* row start/column start/ row end/ column end */
-    grid-area:hd;
   }
+.img-responsive{
+  width: 100%;
+  height: 400px;
+}
+/* .img-responsive2{
+  width: 15%;
+  height: 400px;
+} */
+
+.card{
+  width: 100%;
+}
+
+
 
   .footer{
     grid-area: ft;  
@@ -34,30 +31,59 @@
   .content{
     grid-area: main;
   }
-  /* if screen is wide engough */
-  /* medium screens */
-  @media(min-width:600px) and (max-width:1100px){
-      .container{
-          display: grid;
-          grid-template-columns: 300px 300px 300px;
-          grid-template-rows: 250px 600px;
-          grid-template-areas: 
-          "hd hd hd hd hd hd hd hd"
-          "sd sd main main main main main main"
-          "ft ft ft ft ft ft ft ft";
-          border:5px solid aquamarine;
-      }
+  .float-left{
+    float:left;
   }
-/* Large screens */
-@media(min-width:1101px){
-    .container{        
-     border:5px solid blue;
-     grid-template-areas: 
-     "hd hd hd hd hd hd hd hd"
-     "sd sd sd sd main main main main"
-     "ft ft ft ft ft ft ft ft";
-    }
-    .body{
-          font-size:27px;
+  .float-right{
+    float: right;
+  }
+  h1{
+    color:rgb(16, 170, 231);
+  }
+  .hr-line{
+    height:4px;
+    background-color: rgb(191, 222, 235);
+    margin:30px 0;
+  }
+  .row{
+    clear: both;
+  }
+  .img-responsive{
+    width:100%;
+  }
+
+  /* 小屏幕 */
+@media screen and (max-width:400px){
+  body{
+    font-size: 12px;
+  }
+}
+  /* if screen is wide engough */
+  /* medium screens 中屏幕*/
+ @media screen and (min-width:401px) and (max-width:992px){
+    body{
+      font-size: 14px;
       }
+    .col-md-4 img{
+        margin:0 auto;
+      }
+    .featured-work-title{
+        text-align: center;
+      }
+    .wrapper{
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+  }
+/* Large screens大屏幕 */
+@media screen and (min-width:993px){
+    .wrapper{        
+        list-style-type: none;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1px;
+    }
+
 }
