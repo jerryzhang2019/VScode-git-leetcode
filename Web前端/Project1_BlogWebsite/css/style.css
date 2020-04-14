@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 .container-resume{
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     /* border:1px solid rgb(98, 168, 235) */
 }
@@ -21,6 +21,12 @@ body {
     width: 50px;
     height: 50px;
 }
+
+.TripImage{
+    width: 550px;
+    height: 500px;
+}
+
 
 @media screen and (min-width:993px) {
     .wrapper {
@@ -69,6 +75,11 @@ body {
 
 .hr-line {
     height: 3px;
+    background-color: #bcbbbb;
+    margin: 30px 0;
+}
+.hr-line2 {
+    height: 1px;
     background-color: #bcbbbb;
     margin: 30px 0;
 }
