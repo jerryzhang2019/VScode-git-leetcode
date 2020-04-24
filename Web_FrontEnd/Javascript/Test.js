@@ -1,2 +1,2 @@
-var result= "3">1;
+var result= 3="3";
 console.log(result)
