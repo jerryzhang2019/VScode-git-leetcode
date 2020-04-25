@@ -16,7 +16,7 @@
  
  
 // change the value of `number` to test your if...else statement
-var number = 2;
+var number = 7;
 
 if (number%2===0/* your conditional goes here */) {
     console.log("this number is even");

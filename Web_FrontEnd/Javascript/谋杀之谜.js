@@ -45,19 +45,19 @@ if (room==="dining room"/* your conditional goes here */) {
     }
 } else if (room === "gallery"/* your conditional goes here */) {
     weapon="trophy";
-    if(suspect=="Van Cleve"){
+    if(suspect=="MS.Van Cleve"){
         solved = true;
     }
 } else if (room === "ballroom"/* your conditional goes here */) {
     
     weapon = "posion";
-    if(suspect=="Kalehoff"){
+    if(suspect=="Mr.Kalehoff"){
         solved = true;
     }
 } else if(room === "billiards room"){
     
     weapon = "pool stick";
-    if(suspect == "Sparr"){
+    if(suspect == "Mrs.Sparr"){
         solved = true;
     }
 }

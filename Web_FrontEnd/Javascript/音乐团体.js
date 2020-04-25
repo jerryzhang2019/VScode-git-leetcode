@@ -11,14 +11,16 @@
 var musicians = 5;
 
 // your code goes here
-if (musicians===1){
-    console.log("this is a solo");
+if(musicians<=0){
+    console.log("not a group");
+}else if (musicians===1){
+    console.log("solo");
 }else if(musicians===2){
-    console.log("this is a dute");
+    console.log("dute");
 }else if(musicians===3){
-    console.log("this is a trio");
-}else if(musicians>=4){
-    console.log("this is a larger group");
-}else{
-    console.log("this is not a group");
+    console.log("trio");
+}else if(musicians===4){
+    console.log("quartet");
+}else if(musicians >4){
+    console.log("this is a large group");
 }
