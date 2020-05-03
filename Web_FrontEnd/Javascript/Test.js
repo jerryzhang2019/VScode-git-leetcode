@@ -28,3 +28,6 @@ function sayHi(name) {
   console.log(greeting + " " + name);
   var greeting = "Hello";
 }
+
+var umbrella = {};
+typeof umbrella;
