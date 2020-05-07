@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - DeadLock_demo01",
+            "request": "launch",
+            "mainClass": "DeadLock_demo01",
+            "projectName": "VScode-git-leetcode_74a22aab"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
