@@ -17,8 +17,8 @@
  * Define Global Variables定义全局变量
  * 
 */
-const pageSection = document.querySelectorAll('section');
-console.log(pageSection);
+const pageSections = document.querySelectorAll('section');
+console.log(pageSections);
 
 /**
  * End Global Variables结束全局变量
@@ -46,16 +46,16 @@ function contentIsInViewport(element){
 
 // build the nav建立导航
 function buildNav(){
-    const navContainer = document.querySelector("#navbar_list");
+    const navContainer = document.querySelector("#navbar__list");
     const containerFragment = document.createDocumentFragment();
 
-    for(const section of pageSection){
+    for(const section of pageSections){
         const liItem = document.createElement('li');
         const aItem = document.createElement('a');
         const sectionName = section.getAttribute('data-nav');
 
         aItem.setAttribute("data-section", section.id);
-        aItem.setAttribute("class", 'menu_link');
+        aItem.setAttribute("class", 'menu__link');
         aItem.textContent = sectionName;
         liItem.appendChild(aItem);
         containerFragment.appendChild(liItem);
@@ -67,12 +67,12 @@ function buildNav(){
 //在视口顶部附近时，将“活动”类添加到部分
 function highlightSection(section){
     if(contentIsInViewport(section)){
-        document.querySelectorAll(".menu_link").forEach(menu =>{
-            menu.classList.remove("menu_link_active");
+        document.querySelectorAll(".menu__link").forEach(menu =>{
+            menu.classList.remove("menu__link__active");
             const sectionId = section.getAttribute("id");
             const menuId = menu.getAttribute("data-section");
             if(menuId == sectionId){
-                menu.classList.add('menu_link_active');
+                menu.classList.add('menu__link__active');
             }
         });
         section.classList.add('heighlight');
@@ -83,15 +83,15 @@ function highlightSection(section){
 // Scroll to anchor ID using scrollTO event
 //使用scrollTO事件滚动到锚点ID
 function scrollHandler(){
-    document.querySelectorAll(".menu_link").forEach(menuLink => {
+    document.querySelectorAll(".menu__link").forEach(menuLink => {
         menuLink.addEventListener("click", function(event){
             event.preventDefault();
-            document.querySelectorAll(".menu_link").forEach(menu => {
-                menu.classList.remove("menu_link_active");
+            document.querySelectorAll(".menu__link").forEach(menu => {
+                menu.classList.remove("menu__link__active");
             });
 
-            event.target.classList.add("menu_link_active");
-            const targetSection = event.target.getAttribute("data-section");
+            event.target.classList.add("menu__link__active");
+            const targetSectionId = event.target.getAttribute("data-section");
 
             const moveTop = document.getElementById(targetSectionId).offsetTop;
             window.scrollTo({
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 // Set sections as active将部分设置为活动
 document.addEventListener('scroll', (event) =>{
-    for (const section of pageSection){
+    for (const section of pageSections){
         highlightSection(section);
     }
 });
