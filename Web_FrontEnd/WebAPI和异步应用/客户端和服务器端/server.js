@@ -33,15 +33,19 @@ function sendData (request, response) {
   response.send(projectData);
 };
 
-// TODO-ROUTES!
-
+// POST route
 app.post('/add', callBack);
-function callBack(req, res){
-    res.send('POST received');
+
+function callBack(req,res){
+  res.send('POST received');
 }
 
-const data=[];
+// POST an animal
+const data = [];
+
 app.post('/animal', addAnimal);
-function addAnimal (req, res){
+
+function addAnimal (req,res){
     data.push(req.body);
 };
+
