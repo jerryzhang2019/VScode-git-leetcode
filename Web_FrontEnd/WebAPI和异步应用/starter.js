@@ -1,12 +1,30 @@
+/* Empty JS object to act as endpoint for all routes */
 projectData = {};
 
-const express = require('express')
+// Express to run server and routes
+const express = require('express');
+
+// Start up an instance of app
 const app = express();
+
+/* Dependencies */
 const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const cors = require
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
+
+/* Initializing the main project folder */
 app.use(express.static('website'));
 
 const port = 3000;
+
+// TODO-Spin up the server
+const server = app.listening(port, listening);
+function listening(){
+    console.log('server running');
+    consoel.log('running on localhost: ${port}');
+};
+
