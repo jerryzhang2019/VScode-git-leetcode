@@ -21,5 +21,6 @@ const postData = async ( url = '', data = {})=>{
   }
   
   // TODO-Call Function
+  postData('/addAnimal',{animal:'lion'})
   
   
