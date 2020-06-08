@@ -24,5 +24,23 @@ const port = 7000;
 const server = app.listen(port, listening);
 function listening(){
     console.log("server running");
-    console.log('running on localhost: $(port)');
+    console.log(`running on localhost: ${port}`);
 }
+//GET route
+app.get('/all', sendData);
+function sendData(request, response){
+    response.send(projectData);
+};
+//TODO-ROUTES!
+app.post('/add', callBack);
+function callBack(req, res){
+    res.send('POST received');
+};
+
+const data=[];
+app.post('/information', addInformation);
+function addInformation(req, res){
+    data.push(req.body);
+}
+
+
