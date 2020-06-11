@@ -1,14 +1,35 @@
 /* Global Variables */
 /* Function to GET Web API Data*/
 let baseURL = 'https://openweathermap.org/data/2.5/weather?zip='
-let apiKey = '';
+let apiKey = '67f1f036f1d0204f97f507300d65c902';
 /* Function called by event listener */
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e){
     const newzip = document.getElementById('zip').value;
-    getzip(baseURL,newzip,apiKey)
+
+    getzip('/addWeatherData')
+    .then(function(data){
+        console.log(data)
+        postData('/addWeatherData',{weather:data.zipcode, weather:data.countryCode,weather:data.apiKey })
+    })
+    .then(
+        updateUI()
+    )
+    // getzip(baseURL,newzip,apiKey)
 }
+const updateUI = async() =>{
+    const request = await fetch('/all');
+    try{
+        const allData = await request.json();
+        document.getElementById('zip').innerHTML = allData[0].zip;
+        document.getElementById('feeling').innerHTML = allData[0].feeling;
+
+    }catch(error){
+        console.log("error", error);
+    }
+}
+
 const getzip = async (baseURL, zip,key)=>{
     const res = await fetch(baseURL+zip+key)
     try{
@@ -20,7 +41,8 @@ const getzip = async (baseURL, zip,key)=>{
     }
 }
 
-import { response } from "express";
+// import { response } from "express";
+// import { allowedNodeEnvironmentFlags } from "process";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -45,9 +67,9 @@ const postData = async (url = '', data={}) => {
         console.log("error", error);
     }
 }
-postData('/addInformation',{temp:'temperature'});
-postData('/addInformation',{date:'date'});
-postData('/addInformation',{input:'user input'});
+// postData('/addInformation',{temp:'temperature'});
+// postData('/addInformation',{date:'date'});
+// postData('/addInformation',{input:'user input'});
 const retrieveData = async(url='') =>{
     const request = await fetch(url);
     try{

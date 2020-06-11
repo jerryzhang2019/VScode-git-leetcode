@@ -37,10 +37,28 @@ function callBack(req, res){
     res.send('POST received');
 };
 
-const data=[];
-app.post('/information', addInformation);
+const weatherData=[];
+
+app.get('/all',getData)
+function getData(req, res){
+    res.send(weatherData)
+    console.log(weatherData)
+}
+
+//POST ROUTE
+app.post('/addInformation', addAnimal);
+
 function addInformation(req, res){
-    data.push(req.body);
+    console.log(req.body)
+
+    newEntry = {
+        zipcode:req.body.zip,
+        feeling:req.body.feeliing
+    }
+
+    weatherData.push(newentry)
+    res.send(weatherData)
+    console.log(weatherData)
 }
 
 
