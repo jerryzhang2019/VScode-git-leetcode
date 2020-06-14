@@ -18,7 +18,6 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
 // Setup Server
 const port = 7000;
 const server = app.listen(port, listening);
@@ -31,8 +30,6 @@ app.get('/all', sendData);
 function sendData(request, response){
     response.send(projectData);
 };
-
-
 
 //TODO-ROUTES!
 // app.post('/add', callBack);
