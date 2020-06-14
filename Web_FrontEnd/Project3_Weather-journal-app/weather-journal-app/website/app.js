@@ -1,7 +1,11 @@
 /* Global Variables */
-/* Function to GET Web API Data*/
-let baseURL = 'https://openweathermap.org/data/2.5/weather?zip='
+let baseURL = 'https://api.openweathermap.org/data/2.5/weather?'
 let apiKey = '67f1f036f1d0204f97f507300d65c902';
+
+// Create a new date instance dynamically with JS
+let d = new Date();
+let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+
 /* Function called by event listener */
 document.getElementById('generate').addEventListener('click', performAction);
 
@@ -44,9 +48,7 @@ const getzip = async (baseURL, zip,key)=>{
 // import { response } from "express";
 // import { allowedNodeEnvironmentFlags } from "process";
 
-// Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+
 
 // Personal API Key for OpenWeatherMap API
 /* Function to POST data */
