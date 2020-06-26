@@ -1,3 +1,40 @@
+.header{
+    background-color: black;
+    background-image: var(--fav-background-image);
+    background-size: var(--fav-background-size);
+    background-position: var(--fav-background-position);
+    color:white;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Carter One',cursive;
+    position: sticky;
+    top:0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-menu{
+    list-style-type: none;
+    display: flex;
+}
+.navbar-list{
+    margin:auto;
+}
+.nav-link{
+    font-family: 'Kaushan Script',cursive;
+    margin-right: 30px;
+    text-decoration: none;
+    list-style:none;
+    color:yellow;
+}
+.nav-link:hover{
+    border-bottom: 1px solid wheat;
+    color: wheat;
+    padding: 10px;
+}
+
 body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;

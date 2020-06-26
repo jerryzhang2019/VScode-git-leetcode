@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require('mini-css-extral-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const workboxPlugin = require('workbox-webpack-plugin');
@@ -20,7 +20,7 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test:/\.js$/,
+                test:/\.scss$/,
                 use:[MiniCssExtractPlugin.loader, 'css-loader','sass-loader']
             }
         ]
